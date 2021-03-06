@@ -15,7 +15,39 @@
 	<link rel="stylesheet" href="css/style.min.css">
 </head>
 <body>
-  <h1>Hello World</h1>
+  <main class="main">
+    <div class="main__top">
+      <div class="logo">
+        <a class="logo" href="https://jugru.org/">
+          <img class="logo__image" src="img/jug-logo.svg" alt="Логотип JUG Ru Group" width="126" height="41">
+        </a>
+      </div>
+    </div>
+    <div class="main__content content">
+      <b class="content__slogan">Конференции, которые нужны</b>
+      <p class="content__text">Мы, JUG Ru Group, делаем крупнейшие конференции для программистов и сочувствующих.</p>
+      <p class="content__text">С нас — крутая программа, топовые спикеры, технические доклады без воды.</p>
+      <p class="content__text">С вас — готовность смотреть и общаться.</p>
+    </div>
+    <div class="main__footer">
+      <a class="button button--primary button--icon-hi">
+        <picture>
+          <source type="image/avif" srcset="img/emoji-hi@2x.avif 1x, img/emoji-hi@2x.avif 2x">
+          <source type="image/webp" srcset="img/emoji-hi@2x.webp 1x, img/emoji-hi@2x.webp 2x">
+          <img class="button__image" src="img/emoji-hi@1x.png" srcset="img/emoji-hi@2x.png 2x" alt="Хочу на конференцию" width="52" height="52">
+        </picture>
+        <span>Купить билет</span>
+      </a>
+      <a class="button button--dark button--icon-facepalm">
+        <picture>
+          <source type="image/avif" srcset="img/emoji-facepalm@2x.avif 1x, img/emoji-facepalm@2x.avif 2x">
+          <source type="image/webp" srcset="img/emoji-facepalm@2x.webp 1x, img/emoji-facepalm@2x.webp 2x">
+          <img class="button__image" src="img/emoji-facepalm@1x.png" srcset="img/emoji-facepalm@2x.png 2x" alt="Просто ужас" width="44" height="44">
+        </picture>
+        <span>Послать в жопу</span>
+      </a>
+    </div>
+  </main>
 <script src="js/main.js"></script>
 </body>
 </html>

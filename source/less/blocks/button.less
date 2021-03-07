@@ -56,4 +56,23 @@
   transform: translate(-50%, 0);
 }
 
+@media (max-width: @tablet-width) {
+  .button {
+    font-size: 14px;
+    line-height: 21px;
+
+    &--icon-hi {
+      .button__icon {
+        top: -52px;
+      }
+    }
+
+    &--icon-facepalm {
+      .button__icon {
+        top: -44px;
+      }
+    }
+  }
+}
+
 

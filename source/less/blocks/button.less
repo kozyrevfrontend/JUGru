@@ -36,6 +36,19 @@
     }
   }
 
+  &--light {
+    color: @text-primary-dark;
+
+    background-color: @bg-light;
+
+    border: 1px solid fade(#000000, 16%);
+
+    &:hover,
+    &:focus {
+      background-color: @bg-light-hover;
+    }
+  }
+
   &--icon-hi {
     .button__icon {
       top: -49px;

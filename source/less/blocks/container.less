@@ -16,13 +16,18 @@
 
     width: 92%;
     max-width: 1288px;
+    padding-left: 30px;
   }
 }
 
 @media (max-width: @tablet-width) {
   .container {
     width: 84.4%;
+  }
+}
 
+@media (max-width: @tablet-min-width) {
+  .container {
     &--grid {
       grid-template-columns: 1fr;
       grid-column-gap: 0;

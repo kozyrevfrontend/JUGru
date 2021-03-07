@@ -75,4 +75,47 @@
   }
 }
 
+@media (max-width: @tablet-width) {
+  .button {
+    font-size: 11px;
+    line-height: 16px;
+
+    &--icon-hi {
+      .button__icon {
+        top: -34px;
+
+        img {
+          width: 34px;
+          height: 34px;
+        }
+      }
+    }
+
+    &--icon-facepalm {
+      .button__icon {
+        top: -28px;
+
+        img {
+          width: 28px;
+          height: 28px;
+        }
+      }
+    }
+
+    &--accent {
+      &:hover,
+      &:focus {
+        background-color: @bg-accent;
+      }
+    }
+
+    &--dark {
+      &:hover,
+      &:focus {
+        background-color: @bg-dark;
+      }
+    }
+  }
+}
+
 

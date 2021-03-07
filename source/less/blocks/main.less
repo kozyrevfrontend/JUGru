@@ -14,9 +14,13 @@
     width: 714px;
     height: 611px;
 
-    background-image: url("../img/main_background@1x.png");
+    background-image: url("../img/main-background-desktop@1x.png");
     background-repeat: no-repeat;
     background-position: 0 0;
+
+    @media (min-resolution: 1.5dppx) {
+      background-image: url("../img/main-background-desktop@2x.png");
+    }
   }
 
   &::after {

@@ -1,0 +1,59 @@
+.button {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 27px;
+
+  border: none;
+
+  cursor: pointer;
+
+  &--accent {
+    color: @text-primary-dark;
+
+    background-color: @bg-accent;
+
+    &:hover,
+    &:focus {
+      background-color: @bg-accent-hover;
+    }
+  }
+
+  &--dark {
+    color: @text-primary-light;
+
+    background-color: @bg-dark;
+
+    &:hover,
+    &:focus {
+      background-color: @bg-dark-hover;
+    }
+  }
+
+  &--icon-hi {
+    .button__icon {
+      top: -49px;
+    }
+  }
+
+  &--icon-facepalm {
+    .button__icon {
+      top: -41px;
+    }
+  }
+}
+
+.button__icon {
+  position: absolute;
+  left: 50%;
+
+  transform: translate(-50%, 0);
+}
+
+

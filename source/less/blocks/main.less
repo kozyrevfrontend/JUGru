@@ -1,0 +1,64 @@
+.main {
+  position: relative;
+
+  padding-top: 149px;
+
+  &::before {
+    content: "";
+
+    position: absolute;
+    top: 186px;
+    right: 0;
+
+    display: block;
+    width: 714px;
+    height: 611px;
+
+    background-image: url("../img/main_background@1x.png");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+  }
+
+  &::after {
+    content: "";
+
+    position: absolute;
+    top: -245px;
+    right: -45px;
+    z-index: -10;
+
+    display: block;
+    width: 550px;
+    height: 800px;
+
+    background: repeating-linear-gradient(black, black 80px, transparent 80px, transparent 160px);
+
+    transform: rotate(45deg);
+
+    animation: background 4s infinite;
+    animation-timing-function: linear;
+  }
+}
+
+@keyframes background {
+  100% {
+    background-position: 0 -800px;
+  }
+}
+
+.main__top {
+  padding-left: 7px;
+  margin-bottom: 53px;
+}
+
+.main__content {
+  margin-bottom: 117px;
+}
+
+.main__footer-button {
+  width: 210px;
+  height: 65px;
+  margin: 0 21px 80px 0;
+
+  border-radius: 12px;
+}

@@ -7,11 +7,29 @@
     display: flex;
     flex-wrap: wrap;
   }
+
+  &--grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 44px;
+    grid-row-gap: 75px;
+
+    width: 92%;
+    max-width: 1288px;
+  }
 }
 
 @media (max-width: @tablet-width) {
   .container {
     width: 84.4%;
+
+    &--grid {
+      grid-template-columns: 1fr;
+      grid-column-gap: 0;
+      grid-row-gap: 50px;
+
+      width: 84.4%;
+    }
   }
 }
 
@@ -22,6 +40,12 @@
     &--flex {
       width: 280px;
       justify-content: space-between;
+    }
+
+    &--grid {
+      grid-row-gap: 30px;
+
+      width: 87.5%;
     }
   }
 }

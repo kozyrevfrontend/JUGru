@@ -60,13 +60,61 @@
 
     cursor: pointer;
 
-    &:hover,
-    &:focus {
+    &:hover {
       color: @text-primary-dark;
 
       background-color: @bg-light;
 
       border-color: @bg-light;
+    }
+  }
+
+  input[type="checkbox"]:focus ~ label {
+    color: @text-primary-dark;
+
+    background-color: @bg-light;
+
+    border-color: @bg-light;
+  }
+}
+
+@media (max-width: @mobile-width) {
+  .question {
+    padding-bottom: 40px;
+  }
+
+  .question__slogan {
+    width: 85.71%;
+    margin: 0 auto 40px;
+  }
+
+  .question__slogan-icon {
+    margin-right: 10px;
+
+    img {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  .question__slogan-text {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 21px;
+  }
+
+  .question__list {
+    width: 76.45%;
+  }
+
+  .question__item {
+    margin-bottom: 10px;
+
+    label {
+      min-height: 35px;
+
+      font-size: 12px;
+      line-height: 16px;
     }
   }
 }

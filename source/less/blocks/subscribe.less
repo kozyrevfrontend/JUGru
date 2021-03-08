@@ -86,3 +86,88 @@
     color: @text-primary-lighten;
   }
 }
+
+@media (max-width: @tablet-min-width) {
+  .subscribe {
+    padding: 20px 0 20px;
+
+    border: none;
+    border-radius: 0;
+  }
+
+  .subscribe__slogan {
+    margin: 0 auto 64px;
+  }
+
+  .subscribe__form {
+    width: 85%;
+    margin: 0 auto 20px;
+  }
+}
+
+@media (max-width: @mobile-width) {
+  .subscribe {
+    padding: 10px 0 20px;
+  }
+
+  .subscribe__slogan {
+    margin: 0 auto 37px;
+  }
+
+  .subscribe__slogan-icon {
+    margin-right: 10px;
+
+    img {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  .subscribe__slogan-text {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 21px;
+  }
+
+  .subscribe__form {
+    width: 100%;
+    margin: 0 auto 18px;
+  }
+
+  .subscribe__input-wrapper {
+    flex-grow: 1;
+    width: auto;
+    margin: 0 6px 0 0;
+
+    input {
+      height: 38px;
+      padding: 0 14px;
+
+      font-size: 11px;
+      line-height: 14px;
+    }
+  }
+
+  .subscribe__button {
+    width: 103px;
+    height: 38px;
+
+    font-size: 11px;
+    line-height: 14px;
+
+    border-radius: 7px;
+  }
+
+  // остановился на этом
+  .subscribe__info {
+    width: 100%;
+    margin: 0 auto;
+
+    font-size: 10px;
+    line-height: 15px;
+
+    p {
+      width: 199px;
+    }
+  }
+}

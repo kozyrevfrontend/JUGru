@@ -8,11 +8,15 @@
   padding-top: 87px;
 
   background-color: #ffffff;
+
+  overflow-y: auto;
 }
 
 .popup__logout {
   display: flex;
   align-items: center;
+  grid-column-start: 1;
+  grid-column-end: 3;
 
   svg {
     margin-right: 20px;
@@ -26,16 +30,57 @@
     line-height: 36px;
     color: @text-primary-dark;
   }
+
+  &:hover,
+  &:focus {
+    span {
+      opacity: 0.7;
+    }
+  }
 }
 
 @media (max-width: @tablet-min-width) {
   .popup {
-    padding-top: 60px;
+    padding-top: 10px;
+    padding-bottom: 60px;
+  }
+
+  .popup__question {
+    grid-row-start: 1;
+    grid-row-start: 2;
+  }
+
+  .popup__subscribe {
+    grid-row-start: 2;
+    grid-row-start: 3;
+  }
+
+  .popup__logout {
+    justify-content: center;
+    grid-row-start: 3;
+    grid-row-start: 4;
+
+    span {
+      font-size: 20px;
+      line-height: 26px;
+    }
   }
 }
 
 @media (max-width: @mobile-width) {
   .popup {
-    padding-top: 20px;
+    padding-top: 0;
+    padding-bottom: 20px;
+  }
+
+  .popup__logout {
+    svg {
+      margin-right: 12px;
+    }
+
+    span {
+      font-size: 14px;
+      line-height: 18px;
+    }
   }
 }

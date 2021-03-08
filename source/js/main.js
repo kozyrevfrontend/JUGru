@@ -1,4 +1,5 @@
-import Popup from "./components/popup";
+import Popup from "./components/popup/popup";
+import {createPopupTemplate} from "./components/popup/createPopupTemplate";
 
-const popup = new Popup(document.querySelector('#modal').content.querySelector('.popup'));
+const popup = new Popup(createPopupTemplate());
 popup.init();

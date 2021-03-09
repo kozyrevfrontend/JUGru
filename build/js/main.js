@@ -2,13 +2,17 @@
   'use strict';
 
   class Popup {
-    constructor(template) {
+    constructor(template, subscribeTemplate, questionTemplate) {
       this.template = template;
+      this.subscribeTemplate = subscribeTemplate;
+      this.questionTemplate = questionTemplate;
       this.openButton = document.querySelector('#openPopup');
       this.closeButton = null;
 
       this.openPopup = this.openPopup.bind(this);
       this.closePopup = this.closePopup.bind(this);
+      this.subscribeSuccessHandler = this.subscribeSuccessHandler.bind(this);
+      this.questionSuccessHandler = this.questionSuccessHandler.bind(this);
     }
 
     init() {
@@ -22,10 +26,46 @@
       this.closeButton.addEventListener('click', () => {
         this.closePopup();
       });
+
+      const subscribeForm = document.querySelector('.subscribe__form');
+      subscribeForm.addEventListener('submit', (evt) => {
+        evt.preventDefault();
+        this.subscribeSuccessHandler();
+      });
+
+      const questionForm = document.querySelector('.question__form');
+      const questionInputs = questionForm.querySelectorAll('input[type="checkbox"]');
+
+      questionInputs.forEach((input) => {
+        input.addEventListener('change', () => {
+          this.questionSuccessHandler();
+        });
+      });
+
     }
 
     closePopup() {
       document.body.removeChild(document.querySelector('.popup'));
+    }
+
+    subscribeSuccessHandler() {
+      const subscribe = document.querySelector('.subscribe');
+
+      while(subscribe.firstChild) {
+        subscribe.removeChild(subscribe.firstChild);
+      }
+
+      subscribe.insertAdjacentHTML('beforeend', this.subscribeTemplate);
+    }
+
+    questionSuccessHandler() {
+      const question = document.querySelector('.question');
+
+      while(question.firstChild) {
+        question.removeChild(question.firstChild);
+      }
+
+      question.insertAdjacentHTML('beforeend', this.questionTemplate);
     }
   }
 
@@ -100,7 +140,38 @@
     );
   };
 
-  const popup = new Popup(createPopupTemplate());
+  const createSubscribeSuccessTemplate = () => {
+    return (
+      `<div class="subscribe__slogan subscribe__slogan--success">
+      <div class="subscribe__slogan-icon">
+        <picture>
+          <source type="image/avif" srcset="img/emoji-hi@2x.avif 1x, img/emoji-hi@2x.avif 2x">
+          <source type="image/webp" srcset="img/emoji-hi@2x.webp 1x, img/emoji-hi@2x.webp 2x">
+          <img src="img/emoji-hi@1x.png" srcset="img/emoji-hi@2x.png 2x" alt="Просто ужас" width="60" height="60">
+        </picture>
+      </div>
+      <b class="subscribe__slogan-text">Я хочу знать, когда будет офлайн</b>
+    </div>
+    <p class="subscribe__success">Спасибо, что подписались на нашу рассылку!</p>`
+    );
+  };
+
+  const createQuestionSuccessTemplate = () => {
+    return (
+      `<div class="question__success">
+      <div class="question__success-icon">
+        <picture>
+          <source type="image/avif" srcset="img/emoji-thumbs-up@2x.avif 1x, img/emoji-thumbs-up@2x.avif 2x">
+          <source type="image/webp" srcset="img/emoji-thumbs-up@2x.webp 1x, img/emoji-thumbs-up@2x.webp 2x">
+          <img src="img/emoji-thumbs-up@1x.png" srcset="img/emoji-thumbs-up@2x.png 2x" alt="Просто ужас" width="100" height="100">
+        </picture>
+      </div>
+      <p>Спасибо, что поделились!</p>
+    </div>`
+    );
+  };
+
+  const popup = new Popup(createPopupTemplate(), createSubscribeSuccessTemplate(), createQuestionSuccessTemplate());
   popup.init();
 
 }());

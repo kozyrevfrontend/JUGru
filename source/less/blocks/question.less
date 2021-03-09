@@ -1,4 +1,7 @@
 .question {
+  position: relative;
+
+  min-height: 610px;
   padding: 38px 0 70px;
 
   color: @text-primary-light;
@@ -86,8 +89,29 @@
   }
 }
 
+.question__success {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 100%;
+  padding: 0 20px;
+
+  text-align: center;
+
+  transform: translate(-50%, -50%);
+
+  p {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 36px;
+  }
+}
+
 @media (max-width: @mobile-width) {
   .question {
+    min-height: 280px;
+
     padding-bottom: 40px;
   }
 
